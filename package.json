@@ -1,0 +1,24 @@
+{
+  "name": "wrestling-app",
+  "version": "1.0.0",
+  "description": "My Person Hobby Project",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon --inspect",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "CS572",
+    "MWA",
+    "Project",
+    "Wrestling",
+    "PHP"
+  ],
+  "author": "Jargal Ganbaatar",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "mongoose": "^6.3.4"
+  }
+}
