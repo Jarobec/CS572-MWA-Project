@@ -1,0 +1,18 @@
+export const environment = {
+  production: true,
+  API_BASEURL: 'http://localhost:1533/api',
+  API_TEAMS_ROUTE: '/teams/',
+  API_PLAYERS_ROUTE: '/players/',
+  TEAM_FORM_HEADER_ADD_LABEL: 'Add a new team',
+  TEAM_FORM_HEADER_EDIT_LABEL: 'Edit a team',
+  TEAM_FORM_BUTTON_ADD_LABEL: 'Create a team',
+  TEAM_FORM_BUTTON_EDIT_LABEL: 'Update a team',
+  TEAM_NOT_FOUND_MESSAGE: 'There are no teams yet',
+  PLAYER_NOT_FOUND_MESSAGE: 'There are no players yet',
+  PLAYER_FORM_HEADER_ADD_LABEL: 'Add a new player',
+  PLAYER_FORM_HEADER_EDIT_LABEL: 'Edit a player',
+  PLAYER_FORM_BUTTON_ADD_LABEL: 'Create a player',
+  PLAYER_FORM_BUTTON_EDIT_LABEL: 'Update a player',
+  TEAM_SEARCH_BY: 'team name',
+  PLAYER_SEARCH_BY: 'player name',
+};

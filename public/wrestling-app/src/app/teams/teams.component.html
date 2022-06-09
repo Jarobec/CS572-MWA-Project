@@ -1,0 +1,42 @@
+<div class="team-list">
+  <h5>The list of teams</h5>
+  <hr />
+  <app-search
+    [searchBy]="searchBy"
+    (searchEvent)="onSearch($event)"
+  ></app-search>
+  <table>
+    <tr *ngFor="let team of teams">
+      <td><app-flag [country]="team.country"></app-flag> {{ team.name }}</td>
+      <td>
+        <button
+          class="btn btn-outline-info btn-sm"
+          routerLink="/team/view/{{ team._id }}"
+        >
+          View
+        </button>
+      </td>
+      <td>
+        <button
+          class="btn btn-outline-primary btn-sm"
+          routerLink="/team/edit/{{ team._id }}"
+        >
+          Edit
+        </button>
+      </td>
+      <td>
+        <button
+          class="btn btn-outline-danger btn-sm"
+          (click)="onDelete(team._id)"
+        >
+          Delete
+        </button>
+      </td>
+    </tr>
+  </table>
+  <hr />
+  <app-paging
+    [createPages]="totalPage"
+    (pageEvent)="onPage($event)"
+  ></app-paging>
+</div>

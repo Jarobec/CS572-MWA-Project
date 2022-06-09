@@ -1,0 +1,59 @@
+<div class="team-detail">
+  <h5>{{ team.name | uppercase }}</h5>
+  <hr />
+  <p>
+    Country: {{ team.country }} <app-flag [country]="team.country"></app-flag>
+  </p>
+  <p>Number of participation of Olympics: {{ team.numOfPartInOlympic }}</p>
+  <h5>The list of players</h5>
+  <button
+    class="btn btn-outline-success btn-sm"
+    routerLink="/team/edit/{{ team._id }}/player/add"
+  >
+    Add a player
+  </button>
+  <hr />
+  <app-search
+    [searchBy]="searchBy"
+    (searchEvent)="onSearch($event)"
+  ></app-search>
+  <div *ngIf="totalPage === 0" class="text-danger">
+    {{ notFoundMessage }}
+  </div>
+  <div *ngIf="totalPage !== 0">
+    <table>
+      <tr>
+        <th>Player name</th>
+        <th>Age</th>
+        <th></th>
+        <th></th>
+      </tr>
+      <tr *ngFor="let player of team.players">
+        <td>{{ player.name }}</td>
+        <td>{{ player.age }}</td>
+        <td>
+          <button
+            class="btn btn-outline-primary btn-sm"
+            routerLink="/team/edit/{{ team._id }}/player/edit/{{ player._id }}"
+          >
+            Edit
+          </button>
+        </td>
+        <td>
+          <button
+            class="btn btn-outline-danger btn-sm"
+            (click)="deletePlayer(player._id)"
+          >
+            Delete
+          </button>
+        </td>
+      </tr>
+    </table>
+
+    <hr />
+    <app-paging
+      [createPages]="totalPage"
+      (pageEvent)="onPage($event)"
+    ></app-paging>
+  </div>
+</div>

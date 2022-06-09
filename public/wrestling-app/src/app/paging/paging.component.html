@@ -1,0 +1,33 @@
+<!-- <div style="display: flex">
+  <div *ngFor="let page of pageNumbers; let i = index" style="padding: 3px">
+    <button
+      [ngClass]="{ 'btn-active': activePageIndex === i }"
+      (click)="selectPage(i)"
+    >
+      {{ i + 1 }}
+    </button>
+  </div>
+</div> -->
+
+<nav aria-label="Pagination">
+  <ul class="pagination pagination-sm">
+    <li class="page-item" [ngClass]="{ disabled: activePageIndex === 0 }">
+      <a class="page-link" tabindex="-1" (click)="onPrevious()">Previous</a>
+    </li>
+    <li
+      class="page-item"
+      [ngClass]="{ active: activePageIndex === i }"
+      *ngFor="let page of pageNumbers; let i = index"
+    >
+      <a class="page-link" (click)="selectPage(i)">{{ i + 1 }}</a>
+    </li>
+    <li
+      class="page-item"
+      [ngClass]="{
+        disabled: totalPage === activePageIndex + 1 || totalPage === 0
+      }"
+    >
+      <a class="page-link" (click)="onNext()">Next</a>
+    </li>
+  </ul>
+</nav>

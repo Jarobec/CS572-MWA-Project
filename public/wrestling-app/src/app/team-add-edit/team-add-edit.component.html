@@ -1,0 +1,39 @@
+<div class="team-add-edit">
+  <h5>{{ headerLabel }}</h5>
+  <form [formGroup]="teamForm" (ngSubmit)="onSave()">
+    <div>
+      <label
+        >Name:
+        <input
+          formControlName="name"
+          class="form-control"
+          placeholder="name"
+          size="50"
+      /></label>
+    </div>
+    <div>
+      <label
+        >Country:
+        <input
+          formControlName="country"
+          class="form-control"
+          placeholder="country"
+          size="50"
+      /></label>
+    </div>
+    <div>
+      <label
+        >Number of participation in Olympics:
+        <input
+          formControlName="numOfPartInOlympic"
+          class="form-control"
+          placeholder="number of participation"
+          type="number"
+      /></label>
+    </div>
+    <hr />
+    <button type="submit" class="btn btn-outline-success btn-sm">
+      {{ buttonLabel }}
+    </button>
+  </form>
+</div>
