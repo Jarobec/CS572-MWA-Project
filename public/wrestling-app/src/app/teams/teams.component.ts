@@ -26,7 +26,7 @@ export class TeamsComponent implements OnInit {
     this._teamsService
       .getAll(this.pageIndex, this.searchValue)
       .subscribe((data) => {
-        this.teams = data.teams;
+        this.teams = data.data;
         this.totalPage = data.totalPage;
       });
   }

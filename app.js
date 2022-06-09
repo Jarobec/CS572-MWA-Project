@@ -3,7 +3,6 @@ require("./api/data/db");
 const express = require("express");
 const teamsRoutes = require("./api/routes/teams.router");
 const playersRoutes = require("./api/routes/players.router");
-const sendResponse = require("./api/middleware/send-response");
 
 const app = express();
 
@@ -21,8 +20,6 @@ app.use("/api", function (req, res, next) {
 });
 app.use("/api", teamsRoutes);
 app.use("/api", playersRoutes);
-
-app.use(sendResponse);
 
 const server = app.listen(process.env.PORT, function () {
   console.log("Server is running on port", server.address().port);
