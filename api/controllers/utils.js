@@ -8,7 +8,6 @@ let offset = parseInt(
   process.env.DEFAULT_FIND_OFFSET,
   process.env.INTEGER_CONVERSION_BASE
 );
-
 const maxCount = parseInt(
   process.env.DEFAULT_FIND_COUNT_MAX,
   process.env.INTEGER_CONVERSION_BASE

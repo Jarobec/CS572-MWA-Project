@@ -39,9 +39,9 @@ export class TeamComponent implements OnInit {
   _getPlayers(): void {
     this._playersService
       .getAll(this.#teamId, this.pageIndex, this.searchValue)
-      .subscribe((players) => {
-        this.totalPage = players.totalPage;
-        this.team.players = players.players;
+      .subscribe((data) => {
+        this.totalPage = data.totalPage;
+        this.team.players = data.data;
       });
   }
 

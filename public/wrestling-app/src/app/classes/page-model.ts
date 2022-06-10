@@ -2,20 +2,15 @@ import { PlayerModel } from './player-model';
 import { TeamModel } from './team-model';
 
 export class PageModel {
-  #teams!: TeamModel[];
-  #players!: PlayerModel[];
+  #data!: [];
   #totalPage!: number;
 
   constructor(totalPage: number) {
     this.#totalPage = totalPage;
   }
 
-  get teams(): TeamModel[] {
-    return this.#teams;
-  }
-
-  get players(): PlayerModel[] {
-    return this.#players;
+  get data(): [] {
+    return this.#data;
   }
 
   get totalPage(): number {
